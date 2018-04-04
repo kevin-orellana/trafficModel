@@ -1,0 +1,4 @@
+% setlights.m
+
+if t > tlc
+    for i = ni
