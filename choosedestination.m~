@@ -1,15 +1,17 @@
-function [] = choosedestination(new_car)
+function [] = choosedestination(new_car, i1)
 % use method of rejection to choose a block with probability proportional
 % to its length and with p uniformly distributed in that block
 % p - 
 % x_dest - x coordinate destination 
 % y_dest - y coordinate destination
-
-    global block_dest point_dest num_blocks xi yi i1 x_dest y_dest L Lmax
+    global block_dest;
+    global point_dest;
+    global num_blocks;
+    global xi;
+    global yi;
+    global i1;
     
-    
-    
-    block_dest(new_car) = 1 + floor(rand * num_block);
+    block_dest(new_car) = 1 + floor(rand * nb);
     point_dest(new_car) = rand * Lmax;
  
     while (point_dest(new_car) >= L(block_dest(new_car)))

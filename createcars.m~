@@ -1,5 +1,6 @@
-function [] = createcars(num_blocks, p, R, L, x, y, xi, yi, on_road)
-% R - probability a car will spawn - per unit length of road per unit time
+function [] = createcars(num_car, num_blocks, p, R, L, x, y, xi, yi)
+% note: insertnewcar?
+% R - probability a car will spawn
 % p - ooint where car spawns
 % x, y - coordinate of car
 % xi, yi - coordinate of intersection
@@ -9,7 +10,7 @@ function [] = createcars(num_blocks, p, R, L, x, y, xi, yi, on_road)
           new_car = new_car + 1;
           p(new_car) = rand*L(b);
           x(new_car) = xi(i1(b)) + p(new_car) * (%unit_vector) * x(b);
-          y(new_car) = yi(i1(b)) + p(new_car) * uy(b);
+          y(new_car) = yi(i1(b)) + p(nc) * uy(b);
           on_road(new_car) = 1;
           insertnewcar() % note where is this from?
           choosedestination() % note: where is this from?
@@ -20,5 +21,3 @@ function [] = createcars(num_blocks, p, R, L, x, y, xi, yi, on_road)
         end
     end
 end
-
-% Sanity check R*Lmax * dt < 0.1
