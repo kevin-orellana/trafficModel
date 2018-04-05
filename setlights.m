@@ -1,7 +1,6 @@
-function [] = setlights(num_intr, num_blocks, t)
-
-    % initialize for setlights
-    % notes: adjust tlcstep
+function [] = setlights()
+% s - 
+    global num_blocks jgreen num_intr bin state
     
     jgreen = ones(1, num_intr);
     num_intr = bin(num_blocks, length(jgreen)); 
@@ -11,7 +10,7 @@ function [] = setlights(num_intr, num_blocks, t)
     createcars(num_blocks)
     
     while (t > tlc)
-        for i = 1:num_blocks_intr
+        for i = 1:num_intr
             jgreen(i) = jgreen(i) + 1;
             if (jgreen(i) > num_intr(i))
                 jgreen(i) = 1;
@@ -20,11 +19,11 @@ function [] = setlights(num_intr, num_blocks, t)
         tlc = tlc + tlc_step;
     end
     
-    s = zeros(1, num_blocks);
+    state = zeros(1, num_blocks);
     
     for i = 1:num_intr
         b = bin(i, jgreen(i));
-        s(b) = 1;
+        state(b) = 1;
     end
     
     
