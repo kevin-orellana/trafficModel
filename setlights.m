@@ -2,8 +2,9 @@ function [] = setlights(num_intr, num_blocks, t)
 
     % initialize for setlights
     % notes: adjust tlcstep
+    
     jgreen = ones(1, num_intr);
-    num_intr = bin(num_blocks, length(jgreen));
+    num_intr = bin(num_blocks, length(jgreen)); 
     tlc_step = 1; %time interval between light changes
     tlc = tlc_step;
     
