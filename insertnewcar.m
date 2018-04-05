@@ -13,7 +13,7 @@ function  [firstcar, lastcar] = insertnewcar(firstcar, lastcar, num_car, p, b)
         nextcar(lastcar(b)) = num_car;
         lastcar(b) = num_car;
     
-    else:
+    else: 
         ca = car;
         car = nextcar(car);
         
