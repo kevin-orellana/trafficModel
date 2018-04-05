@@ -1,4 +1,4 @@
-function [] = setlights(num_intr, num_blocks, t)
+function [] = setlights(num_intr,num_blocks, t)
 
     % initialize for setlights
     % notes: adjust tlcstep

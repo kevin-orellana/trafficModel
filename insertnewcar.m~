@@ -9,7 +9,7 @@ function  [firstcar, lastcar] = insertnewcar(firstcar, lastcar, num_car, p, b)
             lastcar(b) = num_cars;
         end
         
-    elseif p(num_car) <= p(lastcar(b))
+    else if p(num_car) <= p(lastcar(b))
         nextcar(lastcar(b)) = num_car;
         lastcar(b) = num_car;
     

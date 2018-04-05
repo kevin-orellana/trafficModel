@@ -1,9 +1,9 @@
-function [] = removecar(onroad, t_exit,  firstcar, lastcar)
+function [] = removecar(onroad, texit,  firstcar, lastcar, )
 % on road - active
-% t_exit - time of exit of car
-    onroad(car) = 0;
-    t_exit(car) = t;
-    if (car == firstcar(b))
+% t_exit -
+    onroad(c) = 0;
+    t_extit(c) = t;
+    if (c == firstcar(b))
         firstcar(b) = nextcar(c);
         if (c == lastcar(b))
             lastcar(b) = 0;
