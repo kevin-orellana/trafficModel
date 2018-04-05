@@ -29,6 +29,8 @@ function graph = Map(num_cars, num_blocks, num_intersections)
     
     if ((sum(nbin) == sum(nbout)) && (sum(nbout) == nb)):
         print('Graph Matches')
+    end
+    
     
     
     
