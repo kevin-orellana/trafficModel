@@ -18,25 +18,27 @@ for b = 1:nb
         else
             d = p(ca) - p(c);
         end
-    pz = p(c);
-    nextc = nextcar(c);
-    p(c) = p(c) + dt * v(d);
-    
-    if (b == bd(c)) && (pz < pd(c)) && (pd(c) <= p(c))
-        removecar
-    elseif (L(b) <= p(c))
-        p(c) = p(c) - L(b)
-        if (nextb(c) == bd(c)) && (pd(c) <= p(c))
+        pz = p(c);
+        nextc = nextcar(c);
+        p(c) = p(c) + dt * v(d);
+        if (b == bd(c)) && (pz < pd(c)) && (pd(c) <= p(c))
             removecar
+        elseif (L(b) <= p(c))
+            p(c) = p(c) - L(b);
+            if (nextb(c) == bd(c)) && (pd(c) <= p(c))
+                removecar
+            else
+                cartonextblock
+            end
         else
-            cartonextblock
+            x(c) = xi(i1(b)) + p(c) * ux(b);
+            y(c) = yi(i1(b)) + p(c) * uy(b);
+            ca = c;
         end
-    else
-        x(c) = xi(i1(b)) + p(c) * ux(b);
-        y(c) = yi(i1(b)) + p(c) * uy(b);
-        ca = c;
+        c = nextc; % saved value of nextcar(c)
     end
-    c = nextc; % saved value of nextcar(c)
+end
+
    
     
             
